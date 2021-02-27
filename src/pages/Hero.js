@@ -26,41 +26,78 @@ const Hero = () => {
 
   const Main = styled.main`
     width: 100%;
-    min-height:   ${({ theme }) => theme.rem(window.innerHeight - theme.menuHeight)};
+    min-height: ${({ theme }) => theme.rem(window.innerHeight - theme.menuHeight)};
     max-width: ${({ theme }) => theme.rem(theme.maxWidth)};
     margin: 0 auto;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(500px,1fr));
     justify-content: center;
     place-items: center;
     gap: ${({ theme }) => theme.rem(theme.spacing)};
 
-
+    @media (max-width: 1300px) {
+      grid-template-columns: 1fr;
+    }
   `
 
   const Content= styled.div`
     width: 100%;
     height: 100%;
     padding-top:${({ theme }) => theme.rem(theme.spacing * 4)};
-    
+
+    @media (max-width: 1300px) {
+      text-align: center;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      padding-top:${({ theme }) => theme.rem(theme.spacing)};
+    }
   `
 
   const ButtonContainer = styled.div`
     margin-top:${({ theme }) => theme.rem(theme.spacing * 2)};
 
+
+    @media (max-width: 1300px) {
+      margin-top:${({ theme }) => theme.rem(theme.spacing)};
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    @media (max-width: 767px) {
+      flex-direction: column;
+    }
+
     >button + button {
       margin-left:${({ theme }) => theme.rem(theme.spacing)};
+
+      @media (max-width: 767px) {
+        margin-left: 0;
+        margin-top:${({ theme }) => theme.rem(theme.spacing / 2)};
+      }
     }
   `
   
   const ImgContainer= styled.div`
     transition: ${transition};
-
   `
 
   const Img= styled.img`
     width: 100%;
-    transform: rotateY(${axisX}deg) rotateX(${axisY}deg) ;
+    transform: rotateY(${axisX}deg) rotateX(${axisY}deg);
+    margin: 0 auto;
+
+    @media (max-width: 1300px) {
+      height: ${({ theme }) => theme.rem(350)};
+      width: unset;
+      margin: 0 auto;
+    }
+
+    @media (max-width: 370px) {
+      height: ${({ theme }) => theme.rem(150)};
+
+    }
   `
 
   return (

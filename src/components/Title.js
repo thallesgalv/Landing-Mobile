@@ -12,7 +12,7 @@ const Title = ({ text, gradient, blueToGreen, purpleToPink, redToYellow, delay, 
   const StyledTitle = styled.h1`
     width: fit-content;
     font-weight: 900;
-    font-size: clamp( ${({ theme }) => theme.rem(theme.fontSize * 4)}, 4vw,  ${({ theme }) => theme.rem(theme.fontSize * 5)}); 
+    font-size: clamp( ${({ theme }) => theme.rem(theme.fontSize * 2.5)}, 4.5vw,  ${({ theme }) => theme.rem(theme.fontSize * 5)}); 
     line-height:  ${({ theme }) => theme.lineHeight};
     position: absolute;
     top: 0;
@@ -43,7 +43,7 @@ const Title = ({ text, gradient, blueToGreen, purpleToPink, redToYellow, delay, 
   const StyledSpan= styled.span`
     width: fit-content;
     font-weight: 900;
-    font-size: clamp( ${({ theme }) => theme.rem(theme.fontSize * 4)}, 4vw,  ${({ theme }) => theme.rem(theme.fontSize * 5)});
+    font-size: clamp( ${({ theme }) => theme.rem(theme.fontSize * 2.5)}, 4.5vw,  ${({ theme }) => theme.rem(theme.fontSize * 5)});
     line-height:  ${({ theme }) => theme.lineHeight};
     background:  #000;
     background-clip: text;
@@ -56,14 +56,8 @@ const Title = ({ text, gradient, blueToGreen, purpleToPink, redToYellow, delay, 
       0% {
         opacity: 1;
       }
-      25%{
-        opacity: .50
-      }
-     50% {
+      33% {
         opacity: 0;
-      }
-     75%{
-        opacity: .75
       }
       100% {
         opacity: 1;
